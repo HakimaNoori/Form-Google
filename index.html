@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous">
+    </script>
     <title>Form Google</title>
 </head>
 <body>
@@ -31,20 +33,24 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/user.png" class="logo">
+                <img src="images/user.png">
             </div>
-            <div class="about-col-1">
+            <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Rem necessitatibus pariatur sequi perspiciatis! In 
                     tenetur unde eum quia? Velit quia aut vero exercitationem
-                    doloremque ducimus culpa itaque sint dicta? Incidunt?</p>
+                    doloremque ducimus culpa itaque sint dicta? Incidunt?
+                    id distinctio eius molestiae totam ratione harum possimus
+                    architecto, odio itaque at iste cum quia libero? Nemo porro
+                    perferendis neque culpa.
+                </p>
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
                         <li><span>Web Development</span><br>Web app Development</li>
@@ -52,7 +58,7 @@
                     </ul>
                 </div>
 
-                <div class="tab-contents">
+                <div class="tab-contents" id="experience">
                     <ul>
                         <li><span>2021 - Current</span><br>UI/UX Design Training at ET
                         Institute</li>
@@ -63,7 +69,7 @@
                     </ul>
                 </div>
 
-                <div class="tab-contents">
+                <div class="tab-contents" id="education">
                     <ul>
                         <li><span>2016</span><br>UI/UX Design Training at ET
                             Institute</li>
@@ -75,5 +81,96 @@
         </div>
     </div>
    </div>
+   <!-----------services--------------->
+   <div id="s  ervices">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fas fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur minus id laborum corporis 
+                asperiores odit. Deserunt, animi.</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fas fa-crop-alt"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Eos nulla laborum corporis asperiores odit.</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fas fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. laborum corporis 
+                asperiores odit. Deserunt, animi.</p>
+                    <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+   </div>
+   <!--------------portfolio---------------->
+   <div id="protfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>The app connects you the talented people around the world.
+                    Download it from plye store.
+                    </p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>SoMusic App</h3>
+                    <p>The app connects you the talented people around the world.
+                    Download it from plye store.
+                    </p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>The app connects you the talented people around the world.
+                    Download it from plye store.
+                    </p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+   </div>
+
+
+
+
+
+
+
+   <script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+   </script>
 </body>
-</html> 
+</html>  
